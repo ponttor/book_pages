@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @book %>
+
+<h4>Pages:</h4>
+
+<div id="pages">
+  <% @book.pages.each do |page| %>
+    <%= render page %>
+    <p>
+      <%# <%= link_to "Show this page", page %>
+    </p>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Add new page", new_book_page_path(@book) %> |
+  <%= link_to "Edit this book", edit_book_path(@book) %> |
+  <%= link_to "Back to books", root_path %>
+
+  <%= button_to "Destroy this book", @book, method: :delete %>
+</div>
